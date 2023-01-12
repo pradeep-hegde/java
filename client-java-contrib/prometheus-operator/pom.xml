@@ -3,7 +3,7 @@
     <parent>
         <artifactId>client-java-parent</artifactId>
         <groupId>io.kubernetes</groupId>
-        <version>17.0.1-SNAPSHOT</version>
+        <version>17.0.1-stsds</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
