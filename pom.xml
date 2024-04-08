@@ -8,25 +8,7 @@
   <url>https://github.com/kubernetes-client/java</url>
   <description>Kubernetes Client Library</description>
 
-  <modules>
-    <!-- These modules are not released -->  
-    <module>e2e</module>
-    <module>examples</module>
-    <module>client-java-contrib/cert-manager</module>
-    <module>client-java-contrib/prometheus-operator</module>
-    <module>client-java-contrib/admissionreview</module>
-    <!-- Due to a bug NEXUS-19853 if skipped modules are at the end
-	 they block upload for all modules. So these are listed first -->
-
-    <!-- These modules are released -->
-    <module>util</module>
-    <module>kubernetes</module>
-    <module>proto</module>
-    <module>extended</module>
-    <module>fluent</module>
-    <module>spring</module>
-    <module>spring-aot</module>
-  </modules>
+  
 
   <scm>
     <connection>scm:git:git@github.com:kubernetes-client/java.git</connection>
