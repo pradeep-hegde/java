@@ -11,7 +11,7 @@
  */
 
 
-package cns.vmware.com.models;
+package com.vmware.cns.models;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -28,24 +28,8 @@ import java.io.IOException;
  * CNSVolumeInfoSpec defines the desired state of CNSVolumeInfo
  */
 @ApiModel(description = "CNSVolumeInfoSpec defines the desired state of CNSVolumeInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T07:31:43.794Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-12T05:50:24.642Z[Etc/UTC]")
 public class V1alpha1CNSVolumeInfoSpec {
-  public static final String SERIALIZED_NAME_CAPACITY = "capacity";
-  @SerializedName(SERIALIZED_NAME_CAPACITY)
-  private Object capacity;
-
-  public static final String SERIALIZED_NAME_NAMESPACE = "namespace";
-  @SerializedName(SERIALIZED_NAME_NAMESPACE)
-  private String namespace;
-
-  public static final String SERIALIZED_NAME_STORAGE_CLASS_NAME = "storageClassName";
-  @SerializedName(SERIALIZED_NAME_STORAGE_CLASS_NAME)
-  private String storageClassName;
-
-  public static final String SERIALIZED_NAME_STORAGE_POLICY_I_D = "storagePolicyID";
-  @SerializedName(SERIALIZED_NAME_STORAGE_POLICY_I_D)
-  private String storagePolicyID;
-
   public static final String SERIALIZED_NAME_V_CENTER_SERVER = "vCenterServer";
   @SerializedName(SERIALIZED_NAME_V_CENTER_SERVER)
   private String vCenterServer;
@@ -53,98 +37,6 @@ public class V1alpha1CNSVolumeInfoSpec {
   public static final String SERIALIZED_NAME_VOLUME_I_D = "volumeID";
   @SerializedName(SERIALIZED_NAME_VOLUME_I_D)
   private String volumeID;
-
-
-  public V1alpha1CNSVolumeInfoSpec capacity(Object capacity) {
-    
-    this.capacity = capacity;
-    return this;
-  }
-
-   /**
-   * Capacity stores the current capacity of the PersistentVolume this volume represents.
-   * @return capacity
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Capacity stores the current capacity of the PersistentVolume this volume represents.")
-
-  public Object getCapacity() {
-    return capacity;
-  }
-
-
-  public void setCapacity(Object capacity) {
-    this.capacity = capacity;
-  }
-
-
-  public V1alpha1CNSVolumeInfoSpec namespace(String namespace) {
-    
-    this.namespace = namespace;
-    return this;
-  }
-
-   /**
-   * Namespace of the PersistentVolumeClaim.
-   * @return namespace
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Namespace of the PersistentVolumeClaim.")
-
-  public String getNamespace() {
-    return namespace;
-  }
-
-
-  public void setNamespace(String namespace) {
-    this.namespace = namespace;
-  }
-
-
-  public V1alpha1CNSVolumeInfoSpec storageClassName(String storageClassName) {
-    
-    this.storageClassName = storageClassName;
-    return this;
-  }
-
-   /**
-   * StorageClassName is the name of the storage class associated with the volume
-   * @return storageClassName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "StorageClassName is the name of the storage class associated with the volume")
-
-  public String getStorageClassName() {
-    return storageClassName;
-  }
-
-
-  public void setStorageClassName(String storageClassName) {
-    this.storageClassName = storageClassName;
-  }
-
-
-  public V1alpha1CNSVolumeInfoSpec storagePolicyID(String storagePolicyID) {
-    
-    this.storagePolicyID = storagePolicyID;
-    return this;
-  }
-
-   /**
-   * StoragePolicyID is the ID of the storage policy associated with the volume
-   * @return storagePolicyID
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "StoragePolicyID is the ID of the storage policy associated with the volume")
-
-  public String getStoragePolicyID() {
-    return storagePolicyID;
-  }
-
-
-  public void setStoragePolicyID(String storagePolicyID) {
-    this.storagePolicyID = storagePolicyID;
-  }
 
 
   public V1alpha1CNSVolumeInfoSpec vCenterServer(String vCenterServer) {
@@ -200,17 +92,13 @@ public class V1alpha1CNSVolumeInfoSpec {
       return false;
     }
     V1alpha1CNSVolumeInfoSpec v1alpha1CNSVolumeInfoSpec = (V1alpha1CNSVolumeInfoSpec) o;
-    return Objects.equals(this.capacity, v1alpha1CNSVolumeInfoSpec.capacity) &&
-        Objects.equals(this.namespace, v1alpha1CNSVolumeInfoSpec.namespace) &&
-        Objects.equals(this.storageClassName, v1alpha1CNSVolumeInfoSpec.storageClassName) &&
-        Objects.equals(this.storagePolicyID, v1alpha1CNSVolumeInfoSpec.storagePolicyID) &&
-        Objects.equals(this.vCenterServer, v1alpha1CNSVolumeInfoSpec.vCenterServer) &&
+    return Objects.equals(this.vCenterServer, v1alpha1CNSVolumeInfoSpec.vCenterServer) &&
         Objects.equals(this.volumeID, v1alpha1CNSVolumeInfoSpec.volumeID);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(capacity, namespace, storageClassName, storagePolicyID, vCenterServer, volumeID);
+    return Objects.hash(vCenterServer, volumeID);
   }
 
 
@@ -218,10 +106,6 @@ public class V1alpha1CNSVolumeInfoSpec {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class V1alpha1CNSVolumeInfoSpec {\n");
-    sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
-    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-    sb.append("    storageClassName: ").append(toIndentedString(storageClassName)).append("\n");
-    sb.append("    storagePolicyID: ").append(toIndentedString(storagePolicyID)).append("\n");
     sb.append("    vCenterServer: ").append(toIndentedString(vCenterServer)).append("\n");
     sb.append("    volumeID: ").append(toIndentedString(volumeID)).append("\n");
     sb.append("}");

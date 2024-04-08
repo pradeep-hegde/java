@@ -11,16 +11,16 @@
  */
 
 
-package cns.vmware.com.models;
+package com.vmware.cns.models;
 
 import java.util.Objects;
 import java.util.Arrays;
-import cns.vmware.com.models.V1alpha1CNSVolumeInfo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.vmware.cns.models.V1alpha1CNSVolumeInfo;
 import io.kubernetes.client.openapi.models.V1ListMeta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,7 +32,7 @@ import java.util.List;
  * CNSVolumeInfoList is a list of CNSVolumeInfo
  */
 @ApiModel(description = "CNSVolumeInfoList is a list of CNSVolumeInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T07:31:43.794Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-12T05:50:24.642Z[Etc/UTC]")
 public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.KubernetesListObject {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
