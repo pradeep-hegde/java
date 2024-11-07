@@ -19,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.vmware.cns.models.V1alpha1CNSVolumeInfo;
-import io.kubernetes.client.openapi.models.V1ListMeta;
+import com.vmware.cns.models.V1alpha1StoragePolicyQuotaSpec;
+import com.vmware.cns.models.V1alpha1StoragePolicyQuotaStatus;
+import io.kubernetes.client.openapi.models.V1ObjectMeta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,18 +52,14 @@ import java.util.Set;
 import io.kubernetes.client.openapi.JSON;
 
 /**
- * CNSVolumeInfoList is a list of CNSVolumeInfo
+ * StoragePolicyQuota is the Schema for the storagepolicyquotas API
  */
-@ApiModel(description = "CNSVolumeInfoList is a list of CNSVolumeInfo")
+@ApiModel(description = "StoragePolicyQuota is the Schema for the storagepolicyquotas API")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-07T09:29:11.173219Z[Etc/UTC]", comments = "Generator version: 7.6.0")
-public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.KubernetesListObject {
+public class V1alpha2StoragePolicyQuota implements io.kubernetes.client.common.KubernetesObject {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
   private String apiVersion;
-
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<V1alpha1CNSVolumeInfo> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
@@ -72,12 +67,20 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private V1ListMeta metadata = null;
+  private V1ObjectMeta metadata = null;
 
-  public V1alpha1CNSVolumeInfoList() {
+  public static final String SERIALIZED_NAME_SPEC = "spec";
+  @SerializedName(SERIALIZED_NAME_SPEC)
+  private V1alpha1StoragePolicyQuotaSpec spec;
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private V1alpha1StoragePolicyQuotaStatus status;
+
+  public V1alpha2StoragePolicyQuota() {
   }
 
-  public V1alpha1CNSVolumeInfoList apiVersion(String apiVersion) {
+  public V1alpha2StoragePolicyQuota apiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return this;
   }
@@ -97,35 +100,7 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
   }
 
 
-  public V1alpha1CNSVolumeInfoList items(List<V1alpha1CNSVolumeInfo> items) {
-    this.items = items;
-    return this;
-  }
-
-  public V1alpha1CNSVolumeInfoList addItemsItem(V1alpha1CNSVolumeInfo itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<>();
-    }
-    this.items.add(itemsItem);
-    return this;
-  }
-
-   /**
-   * List of cnsvolumeinfoes. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md
-   * @return items
-  **/
-  @jakarta.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "List of cnsvolumeinfoes. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md")
-  public List<V1alpha1CNSVolumeInfo> getItems() {
-    return items;
-  }
-
-  public void setItems(List<V1alpha1CNSVolumeInfo> items) {
-    this.items = items;
-  }
-
-
-  public V1alpha1CNSVolumeInfoList kind(String kind) {
+  public V1alpha2StoragePolicyQuota kind(String kind) {
     this.kind = kind;
     return this;
   }
@@ -145,7 +120,7 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
   }
 
 
-  public V1alpha1CNSVolumeInfoList metadata(V1ListMeta metadata) {
+  public V1alpha2StoragePolicyQuota metadata(V1ObjectMeta metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -156,12 +131,52 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
   **/
   @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-  public V1ListMeta getMetadata() {
+  public V1ObjectMeta getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(V1ListMeta metadata) {
+  public void setMetadata(V1ObjectMeta metadata) {
     this.metadata = metadata;
+  }
+
+
+  public V1alpha2StoragePolicyQuota spec(V1alpha1StoragePolicyQuotaSpec spec) {
+    this.spec = spec;
+    return this;
+  }
+
+   /**
+   * Get spec
+   * @return spec
+  **/
+  @jakarta.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public V1alpha1StoragePolicyQuotaSpec getSpec() {
+    return spec;
+  }
+
+  public void setSpec(V1alpha1StoragePolicyQuotaSpec spec) {
+    this.spec = spec;
+  }
+
+
+  public V1alpha2StoragePolicyQuota status(V1alpha1StoragePolicyQuotaStatus status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @jakarta.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public V1alpha1StoragePolicyQuotaStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(V1alpha1StoragePolicyQuotaStatus status) {
+    this.status = status;
   }
 
 
@@ -174,26 +189,28 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    V1alpha1CNSVolumeInfoList v1alpha1CNSVolumeInfoList = (V1alpha1CNSVolumeInfoList) o;
-    return Objects.equals(this.apiVersion, v1alpha1CNSVolumeInfoList.apiVersion) &&
-        Objects.equals(this.items, v1alpha1CNSVolumeInfoList.items) &&
-        Objects.equals(this.kind, v1alpha1CNSVolumeInfoList.kind) &&
-        Objects.equals(this.metadata, v1alpha1CNSVolumeInfoList.metadata);
+    V1alpha2StoragePolicyQuota v1alpha2StoragePolicyQuota = (V1alpha2StoragePolicyQuota) o;
+    return Objects.equals(this.apiVersion, v1alpha2StoragePolicyQuota.apiVersion) &&
+        Objects.equals(this.kind, v1alpha2StoragePolicyQuota.kind) &&
+        Objects.equals(this.metadata, v1alpha2StoragePolicyQuota.metadata) &&
+        Objects.equals(this.spec, v1alpha2StoragePolicyQuota.spec) &&
+        Objects.equals(this.status, v1alpha2StoragePolicyQuota.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, items, kind, metadata);
+    return Objects.hash(apiVersion, kind, metadata, spec, status);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class V1alpha1CNSVolumeInfoList {\n");
+    sb.append("class V1alpha2StoragePolicyQuota {\n");
     sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -217,58 +234,49 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("apiVersion");
-    openapiFields.add("items");
     openapiFields.add("kind");
     openapiFields.add("metadata");
+    openapiFields.add("spec");
+    openapiFields.add("status");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("items");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to V1alpha1CNSVolumeInfoList
+  * @throws IOException if the JSON Element is invalid with respect to V1alpha2StoragePolicyQuota
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!V1alpha1CNSVolumeInfoList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in V1alpha1CNSVolumeInfoList is not found in the empty JSON string", V1alpha1CNSVolumeInfoList.openapiRequiredFields.toString()));
+        if (!V1alpha2StoragePolicyQuota.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1alpha2StoragePolicyQuota is not found in the empty JSON string", V1alpha2StoragePolicyQuota.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!V1alpha1CNSVolumeInfoList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1alpha1CNSVolumeInfoList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : V1alpha1CNSVolumeInfoList.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!V1alpha2StoragePolicyQuota.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1alpha2StoragePolicyQuota` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("apiVersion") != null && !jsonObj.get("apiVersion").isJsonNull()) && !jsonObj.get("apiVersion").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `apiVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiVersion").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
-      }
-
-      JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
-      // validate the required field `items` (array)
-      for (int i = 0; i < jsonArrayitems.size(); i++) {
-        V1alpha1CNSVolumeInfo.validateJsonElement(jsonArrayitems.get(i));
-      };
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      }
+      // validate the optional field `spec`
+      if (jsonObj.get("spec") != null && !jsonObj.get("spec").isJsonNull()) {
+        V1alpha1StoragePolicyQuotaSpec.validateJsonElement(jsonObj.get("spec"));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        V1alpha1StoragePolicyQuotaStatus.validateJsonElement(jsonObj.get("status"));
       }
   }
 
@@ -276,22 +284,22 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!V1alpha1CNSVolumeInfoList.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'V1alpha1CNSVolumeInfoList' and its subtypes
+       if (!V1alpha2StoragePolicyQuota.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1alpha2StoragePolicyQuota' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<V1alpha1CNSVolumeInfoList> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(V1alpha1CNSVolumeInfoList.class));
+       final TypeAdapter<V1alpha2StoragePolicyQuota> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1alpha2StoragePolicyQuota.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<V1alpha1CNSVolumeInfoList>() {
+       return (TypeAdapter<T>) new TypeAdapter<V1alpha2StoragePolicyQuota>() {
            @Override
-           public void write(JsonWriter out, V1alpha1CNSVolumeInfoList value) throws IOException {
+           public void write(JsonWriter out, V1alpha2StoragePolicyQuota value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public V1alpha1CNSVolumeInfoList read(JsonReader in) throws IOException {
+           public V1alpha2StoragePolicyQuota read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -302,18 +310,18 @@ public class V1alpha1CNSVolumeInfoList implements io.kubernetes.client.common.Ku
   }
 
  /**
-  * Create an instance of V1alpha1CNSVolumeInfoList given an JSON string
+  * Create an instance of V1alpha2StoragePolicyQuota given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of V1alpha1CNSVolumeInfoList
-  * @throws IOException if the JSON string is invalid with respect to V1alpha1CNSVolumeInfoList
+  * @return An instance of V1alpha2StoragePolicyQuota
+  * @throws IOException if the JSON string is invalid with respect to V1alpha2StoragePolicyQuota
   */
-  public static V1alpha1CNSVolumeInfoList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, V1alpha1CNSVolumeInfoList.class);
+  public static V1alpha2StoragePolicyQuota fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1alpha2StoragePolicyQuota.class);
   }
 
  /**
-  * Convert an instance of V1alpha1CNSVolumeInfoList to an JSON string
+  * Convert an instance of V1alpha2StoragePolicyQuota to an JSON string
   *
   * @return JSON string
   */
